@@ -1,0 +1,71 @@
+% --- USA LA CLASE IEEEtran ---
+% "conference" lo pone a dos columnas, que es lo más común.
+% Para formato de revista (journal), usa [journal]
+\documentclass[conference]{IEEEtran}
+
+% --- PAQUETES COMUNES EN IEEE ---
+\usepackage[utf8]{inputenc} % Acentos y caracteres
+\usepackage[T1]{fontenc}    % Para una mejor codificación de fuentes
+\usepackage{graphicx}       % Para imágenes
+\usepackage{amsmath}        % Para matemáticas avanzadas
+\usepackage{cite}           % Para formatear las citas (ej. [1]-[3])
+\usepackage{url}            % Para URLs
+
+\begin{document}
+% --- INFORMACIÓN DEL DOCUMENTO ---
+\title{Investigacion Patrones (No me acuerdo del nombre)}
+
+% --- ESTRUCTURA DE AUTORES (MUY DIFERENTE) ---
+% Usa \IEEEauthorblockN para nombres y \IEEEauthorblockA para afiliación
+\author{
+    \IEEEauthorblockN{Jose Eduardo Cruz Vargas\\
+    Darío Rámses Gutierréz Rodríguez\\
+    Valeska Blanco\\
+    Andres Martinez Vargas}
+    \IEEEauthorblockA{
+        Instituto Tecnologico de Costa Rica\\
+        Cartago, Costa Rica\\
+        Email: jecruz@estudiantec.cr
+    }
+    % Descomenta y repite este bloque para más autores
+    % \and
+    % \IEEEauthorblockN{Nombre del Segundo Autor}
+    % \IEEEauthorblockA{
+    %     Afiliación del Segundo Autor\\
+    %     Ciudad, País\\
+    %     Email: otro.email@dominio.com
+    % }
+}
+
+% --- INICIO DEL DOCUMENTO ---
+
+
+% --- RESUMEN (ABSTRACT) ---
+% El abstract DEBE ir antes de \maketitle en IEEEtran
+
+
+
+% --- CREA EL TÍTULO Y EL BLOQUE DE AUTORES ---
+% \maketitle DEBE ir DESPUÉS del abstract en IEEEtran
+\maketitle
+
+
+% --- CONTENIDO DEL DOCUMENTO ---
+% Tu archivo \input funciona exactamente igual
+\input{abstract.tex}
+\input{introduccion.tex}
+\input{desarrollo.tex}
+\input{estado_del_arte.tex}
+\input{resultados.tex}
+\input{conclusiones.tex}
+
+% --- BIBLIOGRAFÍA ---
+% (Aquí es donde configurarías tu bibliografía, usualmente con .bib)
+% --- BIBLIOGRAFÍA ---
+% 1. Define el estilo de las referencias (IEEEtran es el estándar)
+\bibliographystyle{IEEEtran}
+
+% 2. Llama al archivo .bib (sin la extensión .bib)
+\bibliography{referencias}
+
+\end{document}
