@@ -1,2 +1,11 @@
 \section{Conclusiones}
-\label{sec:intro}
+\label{sec:conclusiones}
+
+El presente trabajo permitió evaluar el desempeño de un modelo autoencoder aplicado al conjunto de datos \textit{MNIST}, demostrando la efectividad del aprendizaje no supervisado para la extracción de características relevantes sin la necesidad de etiquetas.
+
+En primer lugar, el análisis de las curvas de pérdida evidenció un proceso de entrenamiento estable y progresivo. La disminución consistente del error en los conjuntos de entrenamiento y de prueba indicó que el modelo logró aprender representaciones útiles sin incurrir en sobreajuste. Este comportamiento sugiere que la arquitectura y los hiperparámetros seleccionados fueron adecuados para la complejidad del problema.
+
+En segundo lugar, las reconstrucciones generadas por el autoencoder mostraron un alto grado de similitud con las imágenes originales. Las formas, proporciones y trazos característicos de los dígitos fueron preservados con precisión, lo que confirma que el modelo fue capaz de capturar las características más esenciales de los datos en el espacio latente. Aunque las imágenes reconstruidas presentaron un leve suavizado, esto es consistente con el comportamiento esperado de los autoencoders, ya que el proceso de compresión tiende a eliminar detalles irrelevantes o ruido visual.
+
+Finalmente, la visualización del espacio latente mediante la técnica \textit{t-SNE} permitió observar cómo el modelo organizó internamente las representaciones de los dígitos. A pesar de no haber sido entrenado con etiquetas, el autoencoder generó agrupamientos distinguibles para la mayoría de las clases, revelando que la codificación aprendida conserva información semántica significativa sobre las diferencias entre los números. Los solapamientos observados entre ciertas clases se atribuyen a similitudes visuales inherentes y a la limitación de representar un espacio latente complejo en dos dimensiones.
+

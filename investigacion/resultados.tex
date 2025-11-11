@@ -1,2 +1,44 @@
 \section{Resultados}
-\label{sec:intro}
+\label{sec:resultados}
+
+En esta sección se presentan los resultados obtenidos tras el entrenamiento y evaluación del modelo autoencoder aplicado al conjunto de datos \textit{MNIST}. El objetivo principal fue que el autoencoder aprendiera una representación comprimida de los datos (espacio latente) capaz de reconstruir las imágenes originales de manera fiel, sin utilizar información de las etiquetas durante el entrenamiento.
+
+\subsection{Curva de pérdida}
+
+La Figura~\ref{fig:perdida} muestra la evolución de la pérdida de entrenamiento y de prueba a lo largo de las épocas. Ambas curvas siguen una tendencia decreciente pronunciada durante las primeras iteraciones, indicando que el modelo mejora rápidamente su capacidad de reconstrucción. Posteriormente, la tasa de disminución se reduce gradualmente hasta alcanzar una zona de estabilización en torno a un valor bajo de error cuadrático medio (\textit{MSE}). 
+
+Se observa además que las curvas de pérdida de entrenamiento y de prueba mantienen comportamientos similares, sin divergencias significativas entre ellas. Esto sugiere que el modelo no incurre en sobreajuste y que generaliza adecuadamente al conjunto de datos no visto durante el entrenamiento. La reducción sostenida del error demuestra que el autoencoder logra capturar las características fundamentales de las imágenes de entrada de manera eficiente.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figuras/curva_perdida.png}
+    \caption{Curvas de pérdida del autoencoder para los conjuntos de entrenamiento y prueba a lo largo de las épocas.}
+    \label{fig:perdida}
+\end{figure}
+
+\subsection{Reconstrucción de imágenes}
+
+En la Figura~\ref{fig:reconstrucciones} se muestran ejemplos comparativos entre las imágenes originales del conjunto de prueba y sus respectivas reconstrucciones generadas por el autoencoder. Las imágenes reconstruidas mantienen la estructura general de los dígitos, reproduciendo los contornos, grosores de trazo y formas características de cada número. 
+
+Aunque las reconstrucciones presentan un leve suavizado en comparación con las imágenes originales —un efecto común en este tipo de modelos debido a la compresión del espacio latente—, la similitud visual es alta. Este resultado evidencia que el modelo ha aprendido una codificación interna capaz de conservar la información relevante para la tarea de reconstrucción, eliminando en el proceso ruido o detalles irrelevantes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figuras/reconstrucciones.png}
+    \caption{Ejemplos de imágenes originales (fila superior) y sus reconstrucciones (fila inferior) obtenidas mediante el autoencoder.}
+    \label{fig:reconstrucciones}
+\end{figure}
+
+\subsection{Representación en el espacio latente}
+
+La Figura~\ref{fig:espacio_latente} presenta la visualización bidimensional del espacio latente utilizando la técnica \textit{t-distributed Stochastic Neighbor Embedding} (\textit{t-SNE}). Cada punto representa una imagen del conjunto de datos proyectada desde el espacio latente a dos dimensiones, coloreada según su etiqueta real. 
+
+Se aprecia una estructura diferenciada en el espacio latente, donde los puntos correspondientes a distintas clases tienden a agruparse formando clústeres relativamente separados. Esto indica que, a pesar de que el modelo no recibe información de las etiquetas durante el entrenamiento, logra organizar la representación interna de manera que preserva relaciones semánticas entre los dígitos. Algunas regiones del espacio presentan solapamientos parciales entre clases con formas visualmente similares (por ejemplo, entre los dígitos 3 y 5 o 4 y 9), lo cual es coherente con la complejidad del conjunto de datos y la naturaleza no supervisada del aprendizaje.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figuras/espacio_latente.png}
+    \caption{Visualización del espacio latente mediante \textit{t-SNE}, mostrando la distribución de las representaciones internas de los dígitos del conjunto \textit{MNIST}.}
+    \label{fig:espacio_latente}
+\end{figure}
+
